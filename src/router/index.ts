@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import HomeView from '../app/shared/domain/collections/infraestructure/views/HomeView.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -10,12 +10,17 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/login',
     name: 'login',
-    component: () => import('../views/LoginView.vue')
+    component: () => import('../app/shared/domain/collections/infraestructure/views/LoginView.vue')
+  },
+  {
+    path: '/users',
+    name: 'users.index',
+    component: () => import('../app/users/infraestructure/views/UsersIndexView.vue')
   },
   {
     path: '/about',
     name: 'about',
-    component: () => import('../views/AboutView.vue')
+    component: () => import('../app/shared/domain/collections/infraestructure/views/AboutView.vue')
   }
 ]
 
