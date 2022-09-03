@@ -20,6 +20,13 @@ import { faUser } from '@fortawesome/free-solid-svg-icons'
 library.add(faUser)
 
 /**
+ * Bootstrap styles
+ * 
+ */
+
+import "bootstrap/dist/css/bootstrap.min.css"
+
+/**
  * App
  * 
  */
@@ -29,3 +36,10 @@ createApp(App)
     .use(VueAxios, axios)
     .component('font-awesome-icon', FontAwesomeIcon)
     .mount('#app')
+
+
+/**
+ * Bootstrap js
+ * 
+ */
+import "bootstrap/dist/js/bootstrap.js"

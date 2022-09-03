@@ -22,7 +22,9 @@ export default defineComponent({
     <button>guardar</button>
   </form>
 
-  <div v-for="user of [...this.users]" v-bind:key="user.name()">
-    <font-awesome-icon icon="fa-solid fa-user" /> {{ user.name() }}
+  <div class="card" v-for="user of [...this.users]" v-bind:key="user.name()">
+      <div class="card-body">
+            <font-awesome-icon icon="fa-solid fa-user" /> {{ user.name() }}
+      </div>
   </div>
 </template>
