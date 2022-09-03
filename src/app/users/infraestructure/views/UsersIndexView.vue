@@ -23,6 +23,6 @@ export default defineComponent({
   </form>
 
   <div v-for="user of [...this.users]" v-bind:key="user.name()">
-    {{ user.name() }}
+    <font-awesome-icon icon="fa-solid fa-user" /> {{ user.name() }}
   </div>
 </template>
