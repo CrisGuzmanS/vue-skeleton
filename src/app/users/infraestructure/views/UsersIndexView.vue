@@ -2,6 +2,7 @@
 import { defineComponent } from "@vue/runtime-core";
 import UserCollection from "@/app/users/domain/collections/UserCollection";
 import UserRequester from "@/app/users/domain/requester/UserRequester";
+import UserItemComponent from "@/app/users/infraestructure/components/UserItemComponent.vue";
 
 export default defineComponent({
   data() {
@@ -18,7 +19,19 @@ export default defineComponent({
     onStore() {
       this.users.push("jorge");
     },
+
+    removeUser(user) {
+      console.log(user);
+    },
   },
+
+  components: {
+    UserItemComponent,
+  },
+
+  emits: [
+    'userDeleted'
+  ]
 });
 </script>
 
@@ -27,9 +40,7 @@ export default defineComponent({
     <button>guardar</button>
   </form>
 
-  <div class="card" v-for="user of [...this.users]" v-bind:key="user.name()">
-    <div class="card-body">
-      <font-awesome-icon icon="fa-solid fa-user" /> {{ user.name() }}
-    </div>
+  <div v-for="user of [...this.users]" v-bind:key="user">
+    <UserItemComponent :user="user" @userDeleted="removeUser" />
   </div>
 </template>
