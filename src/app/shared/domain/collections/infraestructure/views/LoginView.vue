@@ -17,11 +17,24 @@ export default defineComponent({
       datePattern: ["Y", "m", "d"],
     });
   },
+
+  methods: {
+    async onLogin(){
+      console.log(this.password, this.email)
+
+      const response = await this.axios.post('http://192.168.100.203:8000/api/login', {
+        email: this.email,
+        password: this.password
+      })
+
+      console.log(response)
+    }
+  }
 });
 </script>
 
 <template>
-  <form>
+  <form @submit.prevent="onLogin">
     email
     <input type="text" name="email" v-model="email" placeholder="email"/>
 
