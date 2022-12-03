@@ -1,5 +1,6 @@
 <template>
-  <div class="about">
+  <div class="text-3xl font-bold underline">
+    text
   </div>
 </template>
 
